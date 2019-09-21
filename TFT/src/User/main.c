@@ -36,14 +36,10 @@ void Hardware_GenericInit(void)
 #endif
 
   if(readStoredPara() == false)
-  {    
-    TSC_Calibration();
-    infoSettings.baudrate = 115200;
-    infoSettings.language = ENGLISH;
-    infoSettings.mode = SERIAL_TSC;
-    storePara();
+  {
+    infoSettingsReset();
   }
-  
+  LCD_RefreshDirection();  //refresh display direction after reading settings
   infoMenuSelect();
 }
 

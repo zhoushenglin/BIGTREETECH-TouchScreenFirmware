@@ -10,6 +10,11 @@
     #define EN_FAN                  "Fan"
     #define EN_SETTINGS             "Settings"
     #define EN_LEVELING             "Leveling"
+    #define EN_POINT_1              "Point 1"
+    #define EN_POINT_2              "Point 2"
+    #define EN_POINT_3              "Point 3"
+    #define EN_POINT_4              "Point 4"
+    #define EN_ABL                  "ABL"
     #define EN_INC                  "Increase"
     #define EN_DEC                  "Decrease"
     #define EN_NOZZLE               "Nozzle"
@@ -27,12 +32,14 @@
     #define EN_FAST_SPEED           "Fast"
     #define EN_FAN_FULL_SPEED       "Full"
     #define EN_FAN_HALF_SPEED       "Half"
-    #define EN_POWER_OFF            "Power Off"
+    #define EN_ROTATE_UI            "Rotate UI"
     #define EN_TOUCHSCREEN_ADJUST   "TS Adjust"
     #define EN_SCREEN_INFO          "Info"
     #define EN_DISCONNECT           "Disconnect"
     #define EN_BAUDRATE_115200      "115200"
     #define EN_BAUDRATE_250000      "250000"
+    #define EN_RUNOUT_OFF           "Runout OFF"
+    #define EN_RUNOUT_ON            "Runout ON"
     #define EN_PERCENTAGE           "Percentage"
     #define EN_BABYSTEP             "BabyStep"
     #define EN_PERCENTAGE_SPEED     "Speed"
@@ -88,5 +95,7 @@
     
     #define EN_ONBOARDSD            "OnboardSD"
     #define EN_READ_ONBOARDSD_ERROR "Read Onboard SD card error!"
+    
+    #define EN_FILAMENT_RUNOUT      "filament runout!"
     
 #endif

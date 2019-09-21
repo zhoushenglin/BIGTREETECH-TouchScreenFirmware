@@ -10,6 +10,11 @@
     #define RU_FAN                  "§£§Ö§ß§ä§Ú§Ý§ñ§ä§à§â"
     #define RU_SETTINGS             "§µ§ã§ä§Ñ§ß§à§Ó§Ü§Ñ"
     #define RU_LEVELING             "§³§ä§à§á"
+    #define RU_POINT_1              "Point 1"
+    #define RU_POINT_2              "Point 2"
+    #define RU_POINT_3              "Point 3"
+    #define RU_POINT_4              "Point 4"
+    #define RU_ABL                  "§³§ä§à§á"
     #define RU_INC                  "§µ§Ó§Ö§Ý§Ú§é§Ú§ä§î"
     #define RU_DEC                  "§µ§Þ§Ö§ß§î§ê§Ú§ä§î"
     #define RU_NOZZLE               "§³§à§á§Ý§à"
@@ -27,12 +32,14 @@
     #define RU_FAST_SPEED           "§¢§í§ã§ä§â§à"
     #define RU_FAN_FULL_SPEED       "§®§Ñ§Ü§ã§Ú§Þ§å§Þ"
     #define RU_FAN_HALF_SPEED       "§³§â§Ö§Õ§ß§ñ§ñ §ã§Ü."
-    #define RU_POWER_OFF            "Power Off"
+    #define RU_ROTATE_UI            "Rotate UI"
     #define RU_TOUCHSCREEN_ADJUST   "§¬§Ñ§Ý§Ú§Ò§â§à§Ó§Ü§Ñ"
     #define RU_SCREEN_INFO          "§ª§ß§æ§à"
     #define RU_DISCONNECT           "Disconnect"
     #define RU_BAUDRATE_115200      "115200"
     #define RU_BAUDRATE_250000      "250000"
+    #define RU_RUNOUT_OFF           "Runout OFF"
+    #define RU_RUNOUT_ON            "Runout ON"
     #define RU_PERCENTAGE           "Percentage"
     #define RU_BABYSTEP             "§®§Ú§Ü§â§à§ê§Ñ§Ô Z"
     #define RU_PERCENTAGE_SPEED     "§³§Ü§à§â§à§ã§ä§î"
@@ -88,5 +95,7 @@
     
     #define RU_ONBOARDSD            "OnboardSD"
     #define RU_READ_ONBOARDSD_ERROR "Read Onboard SD card error!"
+    
+    #define RU_FILAMENT_RUNOUT      "filament runout!"
     
 #endif

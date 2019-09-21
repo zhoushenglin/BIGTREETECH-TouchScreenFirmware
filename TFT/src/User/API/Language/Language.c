@@ -6,7 +6,7 @@
 #include "language_jp.h"
 #include "language_de.h"
 #include "language_am.h"
-
+#include "language_cz.h"
 
 const char *const en_pack[LABEL_NUM]={
   EN_LANGUAGE,
@@ -18,6 +18,11 @@ const char *const en_pack[LABEL_NUM]={
   EN_FAN,
   EN_SETTINGS,
   EN_LEVELING,
+  EN_POINT_1,
+  EN_POINT_2,
+  EN_POINT_3,
+  EN_POINT_4,
+  EN_ABL,
   EN_INC,
   EN_DEC,
   EN_NOZZLE,
@@ -35,12 +40,14 @@ const char *const en_pack[LABEL_NUM]={
   EN_FAST_SPEED,
   EN_FAN_FULL_SPEED,
   EN_FAN_HALF_SPEED,
-  EN_POWER_OFF,
+  EN_ROTATE_UI,
   EN_TOUCHSCREEN_ADJUST,
   EN_SCREEN_INFO,
   EN_DISCONNECT,
   EN_BAUDRATE_115200,
   EN_BAUDRATE_250000,
+  EN_RUNOUT_OFF,
+  EN_RUNOUT_ON,
   EN_PERCENTAGE,
   EN_BABYSTEP,
   EN_PERCENTAGE_SPEED,
@@ -92,7 +99,8 @@ const char *const en_pack[LABEL_NUM]={
   EN_U_DISK_INSERTED,
   EN_U_DISK_REMOVED,
   EN_ONBOARDSD,
-  EN_READ_ONBOARDSD_ERROR
+  EN_READ_ONBOARDSD_ERROR,
+  EN_FILAMENT_RUNOUT
 };
 
 const char *const cn_pack[LABEL_NUM]={
@@ -105,6 +113,11 @@ const char *const cn_pack[LABEL_NUM]={
   CN_FAN,
   CN_SETTINGS,
   CN_LEVELING,
+  CN_POINT_1,
+  CN_POINT_2,
+  CN_POINT_3,
+  CN_POINT_4,
+  CN_ABL,
   CN_INC,
   CN_DEC,
   CN_NOZZLE,
@@ -122,12 +135,14 @@ const char *const cn_pack[LABEL_NUM]={
   CN_FAST_SPEED,
   CN_FAN_FULL_SPEED,
   CN_FAN_HALF_SPEED,
-  CN_POWER_OFF,
+  CN_ROTATE_UI,
   CN_TOUCHSCREEN_ADJUST,
   CN_SCREEN_INFO,
   CN_DISCONNECT,
   CN_BAUDRATE_115200,
   CN_BAUDRATE_250000,
+  CN_RUNOUT_OFF,
+  CN_RUNOUT_ON,
   CN_PERCENTAGE,
   CN_BABYSTEP,
   CN_PERCENTAGE_SPEED,
@@ -179,7 +194,8 @@ const char *const cn_pack[LABEL_NUM]={
   CN_U_DISK_INSERTED,
   CN_U_DISK_REMOVED,
   CN_ONBOARDSD,
-  CN_READ_ONBOARDSD_ERROR
+  CN_READ_ONBOARDSD_ERROR,
+  CN_FILAMENT_RUNOUT
 };
 
 const char *const ru_pack[LABEL_NUM]={
@@ -192,6 +208,11 @@ const char *const ru_pack[LABEL_NUM]={
   RU_FAN,
   RU_SETTINGS,
   RU_LEVELING,
+  RU_POINT_1,
+  RU_POINT_2,
+  RU_POINT_3,
+  RU_POINT_4,
+  RU_ABL,
   RU_INC,
   RU_DEC,
   RU_NOZZLE,
@@ -209,12 +230,14 @@ const char *const ru_pack[LABEL_NUM]={
   RU_FAST_SPEED,
   RU_FAN_FULL_SPEED,
   RU_FAN_HALF_SPEED,
-  RU_POWER_OFF,
+  RU_ROTATE_UI,
   RU_TOUCHSCREEN_ADJUST,
   RU_SCREEN_INFO,
   RU_DISCONNECT,
   RU_BAUDRATE_115200,
   RU_BAUDRATE_250000,
+  RU_RUNOUT_OFF,
+  RU_RUNOUT_ON,
   RU_PERCENTAGE,
   RU_BABYSTEP,
   RU_PERCENTAGE_SPEED,
@@ -266,7 +289,8 @@ const char *const ru_pack[LABEL_NUM]={
   RU_U_DISK_INSERTED,
   RU_U_DISK_REMOVED,
   RU_ONBOARDSD,
-  RU_READ_ONBOARDSD_ERROR
+  RU_READ_ONBOARDSD_ERROR,
+  RU_FILAMENT_RUNOUT
 };
 
 const char *const jp_pack[LABEL_NUM]={
@@ -279,6 +303,11 @@ const char *const jp_pack[LABEL_NUM]={
   JP_FAN,
   JP_SETTINGS,
   JP_LEVELING,
+  JP_POINT_1,
+  JP_POINT_2,
+  JP_POINT_3,
+  JP_POINT_4,
+  JP_ABL,
   JP_INC,
   JP_DEC,
   JP_NOZZLE,
@@ -296,12 +325,14 @@ const char *const jp_pack[LABEL_NUM]={
   JP_FAST_SPEED,
   JP_FAN_FULL_SPEED,
   JP_FAN_HALF_SPEED,
-  JP_POWER_OFF,
+  JP_ROTATE_UI,
   JP_TOUCHSCREEN_ADJUST,
   JP_SCREEN_INFO,
   JP_DISCONNECT,
   JP_BAUDRATE_115200,
   JP_BAUDRATE_250000,
+  JP_RUNOUT_OFF,
+  JP_RUNOUT_ON,
   JP_PERCENTAGE,
   JP_BABYSTEP,
   JP_PERCENTAGE_SPEED,
@@ -353,7 +384,8 @@ const char *const jp_pack[LABEL_NUM]={
   JP_U_DISK_INSERTED,
   JP_U_DISK_REMOVED,
   JP_ONBOARDSD,
-  JP_READ_ONBOARDSD_ERROR
+  JP_READ_ONBOARDSD_ERROR,
+  JP_FILAMENT_RUNOUT
 };
 
 const char *const am_pack[LABEL_NUM]={
@@ -366,6 +398,11 @@ const char *const am_pack[LABEL_NUM]={
   AM_FAN,
   AM_SETTINGS,
   AM_LEVELING,
+  AM_POINT_1,
+  AM_POINT_2,
+  AM_POINT_3,
+  AM_POINT_4,
+  AM_ABL,
   AM_INC,
   AM_DEC,
   AM_NOZZLE,
@@ -383,12 +420,14 @@ const char *const am_pack[LABEL_NUM]={
   AM_FAST_SPEED,
   AM_FAN_FULL_SPEED,
   AM_FAN_HALF_SPEED,
-  AM_POWER_OFF,
+  AM_ROTATE_UI,
   AM_TOUCHSCREEN_ADJUST,
   AM_SCREEN_INFO,
   AM_DISCONNECT,
   AM_BAUDRATE_115200,
   AM_BAUDRATE_250000,
+  AM_RUNOUT_OFF,
+  AM_RUNOUT_ON,
   AM_PERCENTAGE,
   AM_BABYSTEP,
   AM_PERCENTAGE_SPEED,
@@ -440,7 +479,8 @@ const char *const am_pack[LABEL_NUM]={
   AM_U_DISK_INSERTED,
   AM_U_DISK_REMOVED,
   AM_ONBOARDSD,
-  AM_READ_ONBOARDSD_ERROR
+  AM_READ_ONBOARDSD_ERROR,
+  AM_FILAMENT_RUNOUT
 };
 
 const char *const de_pack[LABEL_NUM]={
@@ -453,6 +493,11 @@ const char *const de_pack[LABEL_NUM]={
   DE_FAN,
   DE_SETTINGS,
   DE_LEVELING,
+  DE_POINT_1,
+  DE_POINT_2,
+  DE_POINT_3,
+  DE_POINT_4,
+  DE_ABL,
   DE_INC,
   DE_DEC,
   DE_NOZZLE,
@@ -470,12 +515,14 @@ const char *const de_pack[LABEL_NUM]={
   DE_FAST_SPEED,
   DE_FAN_FULL_SPEED,
   DE_FAN_HALF_SPEED,
-  DE_POWER_OFF,
+  DE_ROTATE_UI,
   DE_TOUCHSCREDE_ADJUST,
   DE_SCREDE_INFO,
   DE_DISCONNECT,
   DE_BAUDRATE_115200,
   DE_BAUDRATE_250000,
+  DE_RUNOUT_OFF,
+  DE_RUNOUT_ON,
   DE_PERCENTAGE,
   DE_BABYSTEP,
   DE_PERCENTAGE_SPEED,
@@ -527,8 +574,115 @@ const char *const de_pack[LABEL_NUM]={
   DE_U_DISK_INSERTED,
   DE_U_DISK_REMOVED,
   DE_ONBOARDSD,
-  DE_READ_ONBOARDSD_ERROR
+  DE_READ_ONBOARDSD_ERROR,
+  DE_FILAMENT_RUNOUT
 };
+
+const char *const cz_pack[LABEL_NUM]={
+  CZ_LANGUAGE,
+  CZ_HEAT,
+  CZ_MOVE,
+  CZ_HOME,
+  CZ_PRINT,
+  CZ_EXTRUDE,
+  CZ_FAN,
+  CZ_SETTINGS,
+  CZ_LEVELING,
+  CZ_POINT_1,
+  CZ_POINT_2,
+  CZ_POINT_3,
+  CZ_POINT_4,
+  CZ_ABL,
+  CZ_INC,
+  CZ_DEC,
+  CZ_NOZZLE,
+  CZ_BED,
+  CZ_STOP,
+  CZ_BACK,
+  CZ_PAGE_UP,
+  CZ_PAGE_DOWN,
+  CZ_PAUSE,
+  CZ_RESUME,
+  CZ_LOAD,
+  CZ_UNLOAD,
+  CZ_SLOW_SPEED,
+  CZ_NORMAL_SPEED,
+  CZ_FAST_SPEED,
+  CZ_FAN_FULL_SPEED,
+  CZ_FAN_HALF_SPEED,
+  CZ_ROTATE_UI,
+  CZ_TOUCHSCREEN_ADJUST,
+  CZ_SCREEN_INFO,
+  CZ_DISCONNECT,
+  CZ_BAUDRATE_115200,
+  CZ_BAUDRATE_250000,
+  CZ_RUNOUT_OFF,
+  CZ_RUNOUT_ON,
+  CZ_PERCENTAGE,
+  CZ_BABYSTEP,
+  CZ_PERCENTAGE_SPEED,
+  CZ_PERCENTAGE_FLOW,
+  CZ_VALUE_ZERO,
+  CZ_1_DEGREE,
+  CZ_5_DEGREE,
+  CZ_10_DEGREE,
+  CZ_X_INC,
+  CZ_Y_INC,
+  CZ_Z_INC,
+  CZ_X_DEC,
+  CZ_Y_DEC,
+  CZ_Z_DEC,
+  CZ_X_HOME,
+  CZ_Y_HOME,
+  CZ_Z_HOME,
+  CZ_001_MM,
+  CZ_01_MM,
+  CZ_1_MM,
+  CZ_5_MM,
+  CZ_10_MM,
+  CZ_1_PERCENT,
+  CZ_5_PERCENT,
+  CZ_10_PERCENT,
+
+  CZ_READY,
+  CZ_PRINTING,
+  CZ_BUSY,
+  CZ_UNCONNECTED,
+  CZ_DISCONNECT_INFO,
+  CZ_LOADING,
+  CZ_POWER_FAILED,
+  CZ_CONTINUE,
+  CZ_CANNEL,
+  CZ_ADJUST_TITLE,
+  CZ_ADJUST_INFO,
+  CZ_ADJUST_OK,
+  CZ_ADJUST_FAILED,
+  CZ_WARNING,
+  CZ_STOP_PRINT,
+  CZ_CONFIRM,
+  CZ_TFTSD,
+  CZ_READ_TFTSD_ERROR,
+  CZ_TFTSD_INSERTED,
+  CZ_TFTSD_REMOVED,
+  CZ_U_DISK,
+  CZ_READ_U_DISK_ERROR,
+  CZ_U_DISK_INSERTED,
+  CZ_U_DISK_REMOVED,
+  CZ_ONBOARDSD,
+  CZ_READ_ONBOARDSD_ERROR,
+  CZ_FILAMENT_RUNOUT
+};
+
+bool isCzech(const u8 *const str)
+{
+  if(str[0] == 0xC3 && str[1] >= 0x81 && str[1] <=0xBD)
+    return true;
+  if(str[0] == 0xC4 && str[1] >= 0x8C && str[1] <=0x9B)
+    return true;
+  if(str[0] == 0xC5 && str[1] >= 0x87 && str[1] <=0xBE)
+    return true;
+  return false;
+}
 
 bool isRussia(const u8 *const str)
 {
@@ -579,6 +733,7 @@ u8 * textSelect(u8 sel)
     case JAPANESE:  return (u8 *)jp_pack[sel];
     case GERMAN:    return (u8 *)de_pack[sel];
 //    case ARMENIAN:  return (u8 *)am_pack[sel];
+    case CZECH:     return (u8 *)cz_pack[sel];
     default:        return NULL;					 
   }
 }

@@ -91,7 +91,7 @@ void busyIndicator(SYS_STATUS status)
   {
     GUI_SetColor(YELLOW);
     GUI_FillCircle(busySign.rect.x0, (busySign.rect.y1 - busySign.rect.y0) / 2, (busySign.rect.x1-busySign.rect.x0)/2);
-    GUI_SetColor(WHITE);
+    GUI_SetColor(FK_COLOR);
   }
   busySign.status = status;
   busySign.time = OS_GetTime();
@@ -179,7 +179,7 @@ void menuDrawTitle(const MENUITEMS * menuItems)
   if(reminder.status == STATUS_IDLE) return;
   GUI_SetColor(RED);
   GUI_DispStringInPrect(&reminder.rect, textSelect(reminder.inf), 1);
-  GUI_SetColor(WHITE);
+  GUI_SetColor(FK_COLOR);
 }
 
 //Draw the entire interface
@@ -225,6 +225,8 @@ void loopProcess(void)
   sendQueueCmd();                     //Parse and send Gcode commands in the queue
   
   parseACK();                         //Parse the received slave response information
+  
+  parseRcvGcode();                    //Parse the received Gcode from other UART, such as: ESP3D, etc...
 
   loopCheckHeater();			            //Temperature related settings
   

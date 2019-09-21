@@ -10,6 +10,11 @@
     #define AM_FAN                  "Fan"
     #define AM_SETTINGS             "Settings"
     #define AM_LEVELING             "Leveling"
+    #define AM_POINT_1              "Point 1"
+    #define AM_POINT_2              "Point 2"
+    #define AM_POINT_3              "Point 3"
+    #define AM_POINT_4              "Point 4"
+    #define AM_ABL                  "ABL"
     #define AM_INC                  "Increase"
     #define AM_DEC                  "Decrease"
     #define AM_NOZZLE               "Nozzle"
@@ -27,12 +32,14 @@
     #define AM_FAST_SPEED           "Fast"
     #define AM_FAN_FULL_SPEED       "Full"
     #define AM_FAN_HALF_SPEED       "Half"
-    #define AM_POWER_OFF            "Power Off"
+    #define AM_ROTATE_UI            "Rotate UI"
     #define AM_TOUCHSCREEN_ADJUST   "TS Adjust"
     #define AM_SCREEN_INFO          "Info"
     #define AM_DISCONNECT           "Disconnect"
     #define AM_BAUDRATE_115200      "115200"
     #define AM_BAUDRATE_250000      "250000"
+    #define AM_RUNOUT_OFF           "Runout OFF"
+    #define AM_RUNOUT_ON            "Runout ON"
     #define AM_PERCENTAGE           "Percentage"
     #define AM_BABYSTEP             "Baby step"
     #define AM_PERCENTAGE_SPEED     "Speed"
@@ -89,5 +96,7 @@
     
     #define AM_ONBOARDSD            "OnboardSD"
     #define AM_READ_ONBOARDSD_ERROR "Read Onboard SD card error!"
+    
+    #define AM_FILAMENT_RUNOUT      "filament runout!"
 
 #endif

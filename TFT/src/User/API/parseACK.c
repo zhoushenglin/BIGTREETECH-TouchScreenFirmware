@@ -1,7 +1,14 @@
+#include "includes.h"
 #include "parseACK.h"
 
-char ack_rev_buf[ACK_MAX_SIZE];
+char *ack_rev_buf = dma_mem_buf[SERIAL_PORT];
 static u16 ack_index=0;
+static u8 ack_cur_src = SERIAL_PORT;
+
+void setCurrentAckSrc(uint8_t src)
+{
+  ack_cur_src = src;
+}
 
 static char ack_seen(const char *str)
 {
@@ -57,10 +64,13 @@ void ackPopupInfo(const char *info)
 
 void parseACK(void)
 {
-  if(infoHost.rx_ok != true) return;      //not get response data
-  if(infoHost.connected == false)         //not connected to Marlin
+startParse:  
+  if(infoHost.rx_ok[SERIAL_PORT] != true) return; //not get response data
+  
+  infoHost.rx_ok[SERIAL_PORT] = false;
+  if(infoHost.connected == false) //not connected to Marlin
   {
-    if(!ack_seen("T:") || !ack_seen("ok"))    goto parse_end;  //the first response should be such as "T:25/50 ok\n"
+    if((!ack_seen("T:") && !ack_seen("T0:")) || !ack_seen("ok"))  goto parse_end;  //the first response should be such as "T:25/50 ok\n"
     infoHost.connected = true;
   }    
 
@@ -93,7 +103,7 @@ void parseACK(void)
     requestCommandInfo.inError = true;
     gcodeProcessed = true;
   }
-  if(requestCommandInfo.inResponse &&  ack_seen(requestCommandInfo.stopMagic ))
+  if(requestCommandInfo.inResponse && ack_seen(requestCommandInfo.stopMagic ))
   {
     requestCommandInfo.done = true;
     requestCommandInfo.inResponse = false;
@@ -111,7 +121,7 @@ void parseACK(void)
     {
       infoHost.wait=false;
     }					
-    if(ack_seen("T:")) 
+    if(ack_seen("T:") || ack_seen("T0:")) 
     {
       heatSetCurrentTemp(heatGetCurrentToolNozzle(), ack_value()+0.5);
       heatSetTargetTemp(heatGetCurrentToolNozzle(), ack_second_value()+0.5);
@@ -169,9 +179,28 @@ void parseACK(void)
   }
   
 parse_end:
-  infoHost.rx_ok=false;
-  Serial_DMAReEnable();
+  if(infoHost.rx_ok[SERIAL_PORT] == true) goto startParse;  // receive new data in parseing, so need parse again
+    
+  if(ack_cur_src != SERIAL_PORT)
+  {
+    Serial_Puts(ack_cur_src, ack_rev_buf);
+  }
+  Serial_DMAReEnable(SERIAL_PORT);
 }
 
-
+void parseRcvGcode(void)
+{
+  #ifdef SERIAL_PORT_2
+    uint8_t i = 0;
+    for(i = 0; i < _USART_CNT; i++)
+    {
+      if(i != SERIAL_PORT && infoHost.rx_ok[i] == true)
+      {
+        infoHost.rx_ok[i] = false;
+        storeCmdFromUART(i, dma_mem_buf[i]);
+        Serial_DMAReEnable(i);
+      }
+    }
+  #endif
+}
 

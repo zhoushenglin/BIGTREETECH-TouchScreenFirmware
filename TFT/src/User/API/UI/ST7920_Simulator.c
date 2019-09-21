@@ -129,10 +129,10 @@ void ST7920_ST7920_ParseWCmd(u8 cmd)
 
 void menuST7920(void)
 { 
-  GUI_Clear(BLACK);
-  GUI_SetColor(ST7920_FNCOLOR);
-  GUI_SetBkColor(ST7920_BKCOLOR);
-  GUI_DispStringInRect(0, 0, LCD_WIDTH, SIMULATOR_YSTART, ST7920_BANNER_TEXT, 0);
+  GUI_Clear(ST7920_BKCOLOR);
+  #ifndef ST7920_FULLSCREEN
+    GUI_DispStringInRect(0, 0, LCD_WIDTH, SIMULATOR_YSTART, (u8*)ST7920_BANNER_TEXT, 0);
+  #endif
   SPI_Slave();
   SPI_Slave_CS_Config();
   

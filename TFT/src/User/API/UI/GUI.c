@@ -567,6 +567,24 @@ uint8_t GUI_DispOne(int16_t x, int16_t y, const uint8_t *p, uint8_t mode)
       GUI_DispChar(x, y,(p[0]<<8)|p[1],mode);
       return ((2<<4) | (1<<0));
     }
+    else if (isCzech(p))
+    {
+      switch(p[0])
+      {
+        case 0xC3:
+          GUI_DispChar(x, y,p[1],mode);
+          break;
+        case 0xC4:
+          GUI_DispChar(x,y,p[1]+10,mode);
+          break;
+        case 0xC5:
+          GUI_DispChar(x,y,p[1]+10,mode);
+          break;
+        default:
+          GUI_DispChar(x,y,'?',mode);
+      }
+      return ((2<<4) | (1<<0));
+    }
     else
     {
       GUI_DispHz(x,y,p,mode);
@@ -758,24 +776,28 @@ void GUI_DispFloat(int16_t x, int16_t y, float num, uint8_t llen, uint8_t rlen, 
 } 
 
 /****************************************************     Widget    *******************************************************************/
+#define RADIO_SELECTED_COLOR GREEN
+#define RADIO_IDLE_COLOR     WHITE
 void RADIO_Create(RADIO *raido)
 {
+  u16 tmp = GUI_GetColor();
   uint8_t i=0;
   for(i=0;i<raido->num;i++)
   {
     if(i==raido->select)
-      GUI_SetColor(ST7920_FNCOLOR);
+      GUI_SetColor(RADIO_SELECTED_COLOR);
     else
-      GUI_SetColor(WHITE);
+      GUI_SetColor(RADIO_IDLE_COLOR);
     GUI_FillCircle(raido->sx+BYTE_HEIGHT/2, i*raido->distance+raido->sy+BYTE_HEIGHT/2, BYTE_HEIGHT/8);
     GUI_DrawCircle(raido->sx+BYTE_HEIGHT/2, i*raido->distance+raido->sy+BYTE_HEIGHT/2, BYTE_HEIGHT/4);
     GUI_DispString(raido->sx+BYTE_HEIGHT,   i*raido->distance+raido->sy, raido->context[i], 1);
   }	
-  GUI_SetColor(WHITE);
+  GUI_SetColor(tmp);
 }
 
 void RADIO_Select(RADIO *raido, uint8_t select)
 {
+  u16 tmp = GUI_GetColor();
   uint8_t i=0;
   if(raido->select==select)
   return;
@@ -783,18 +805,18 @@ void RADIO_Select(RADIO *raido, uint8_t select)
   {
     if(i==0)
     {
-      GUI_SetColor(WHITE);
+      GUI_SetColor(RADIO_IDLE_COLOR);
     }
     else
     {
       raido->select=select;
-      GUI_SetColor(ST7920_FNCOLOR);
+      GUI_SetColor(RADIO_SELECTED_COLOR);
     }
     GUI_FillCircle(raido->sx+BYTE_HEIGHT/2, raido->select*raido->distance+raido->sy+BYTE_HEIGHT/2, BYTE_HEIGHT/8);
     GUI_DrawCircle(raido->sx+BYTE_HEIGHT/2, raido->select*raido->distance+raido->sy+BYTE_HEIGHT/2, BYTE_HEIGHT/4);
     GUI_DispString(raido->sx+BYTE_HEIGHT,   raido->select*raido->distance+raido->sy, raido->context[raido->select], 1);
   }
-  GUI_SetColor(WHITE);
+  GUI_SetColor(tmp);
 }
 
 //������ʾ�ַ���

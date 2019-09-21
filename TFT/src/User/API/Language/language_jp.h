@@ -9,7 +9,12 @@
     #define JP_EXTRUDE              "押出"
     #define JP_FAN                  "ファン"
     #define JP_SETTINGS             "設定"
-    #define JP_LEVELING             "自動調整"
+    #define JP_LEVELING             "Leveling"
+    #define JP_POINT_1              "Point 1"
+    #define JP_POINT_2              "Point 2"
+    #define JP_POINT_3              "Point 3"
+    #define JP_POINT_4              "Point 4"
+    #define JP_ABL                  "自動調整"
     #define JP_INC                  "増え"
     #define JP_DEC                  "減る"
     #define JP_NOZZLE               "ノズル"
@@ -27,12 +32,14 @@
     #define JP_FAST_SPEED           "早め"
     #define JP_FAN_FULL_SPEED       "全速"
     #define JP_FAN_HALF_SPEED       "50%速さ"
-    #define JP_POWER_OFF            "電源OFF"
+    #define JP_ROTATE_UI            "Rotate UI"
     #define JP_TOUCHSCREEN_ADJUST   "校正する"
     #define JP_SCREEN_INFO          "ついて"
     #define JP_DISCONNECT           "データ接続"
     #define JP_BAUDRATE_115200      "115200"
     #define JP_BAUDRATE_250000      "250000"
+    #define JP_RUNOUT_OFF           "Runout OFF"
+    #define JP_RUNOUT_ON            "Runout ON"
     #define JP_PERCENTAGE           "パーセント"
     #define JP_BABYSTEP             "ベビーステップ"
     #define JP_PERCENTAGE_SPEED     "スビード"
@@ -88,5 +95,7 @@
     
     #define JP_ONBOARDSD            "内部 mSDカード"
     #define JP_READ_ONBOARDSD_ERROR "内部 mSDカードの読み取りがエラー発生しました!"
+    
+    #define JP_FILAMENT_RUNOUT      "filament runout!"
 
 #endif

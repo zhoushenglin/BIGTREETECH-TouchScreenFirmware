@@ -9,7 +9,12 @@
     #define CN_EXTRUDE              "挤出"
     #define CN_FAN                  "风扇"
     #define CN_SETTINGS             "设置"
-    #define CN_LEVELING             "自动调平"
+    #define CN_LEVELING             "调平"
+    #define CN_POINT_1              "第一点"
+    #define CN_POINT_2              "第二点"
+    #define CN_POINT_3              "第三点"
+    #define CN_POINT_4              "第四点"
+    #define CN_ABL                  "自动调平"
     #define CN_INC                  "增加"
     #define CN_DEC                  "减少"
     #define CN_NOZZLE               "喷头"
@@ -27,12 +32,14 @@
     #define CN_FAST_SPEED           "快速"
     #define CN_FAN_FULL_SPEED       "全速"
     #define CN_FAN_HALF_SPEED       "半速"
-    #define CN_POWER_OFF            "关机"
+    #define CN_ROTATE_UI            "旋转界面"
     #define CN_TOUCHSCREEN_ADJUST   "屏幕校准"
     #define CN_SCREEN_INFO          "关于"
     #define CN_DISCONNECT           "断开连接"
     #define CN_BAUDRATE_115200      "115200"
     #define CN_BAUDRATE_250000      "250000"
+    #define CN_RUNOUT_OFF           "耗材检测关"
+    #define CN_RUNOUT_ON            "耗材检测开"
     #define CN_PERCENTAGE           "百分比"
     #define CN_BABYSTEP             "Z-微调"
     #define CN_PERCENTAGE_SPEED     "速度百分比"
@@ -88,5 +95,7 @@
     
     #define CN_ONBOARDSD            "板载SD"
     #define CN_READ_ONBOARDSD_ERROR "读板载SD卡出错!"
+    
+    #define CN_FILAMENT_RUNOUT      "耗材已用尽,请更换耗材!"
 
 #endif

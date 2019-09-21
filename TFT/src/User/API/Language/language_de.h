@@ -9,7 +9,12 @@
     #define DE_EXTRUDE              "Extruder"
     #define DE_FAN                  "Fan"
     #define DE_SETTINGS             "Setup"
-    #define DE_LEVELING             "ABL"
+    #define DE_LEVELING             "Leveling"
+    #define DE_POINT_1              "Point 1"
+    #define DE_POINT_2              "Point 2"
+    #define DE_POINT_3              "Point 3"
+    #define DE_POINT_4              "Point 4"
+    #define DE_ABL                  "ABL"
     #define DE_INC                  "Erhoehen"
     #define DE_DEC                  "Verringern"
     #define DE_NOZZLE               "Duese"
@@ -27,12 +32,14 @@
     #define DE_FAST_SPEED           "Schnell"
     #define DE_FAN_FULL_SPEED       "Voll"
     #define DE_FAN_HALF_SPEED       "Halb"
-    #define DE_POWER_OFF            "Ausschalten"
+    #define DE_ROTATE_UI            "Rotate UI"
     #define DE_TOUCHSCREDE_ADJUST   "TS kalib."
     #define DE_SCREDE_INFO          "Info"
     #define DE_DISCONNECT           "Trennen"
     #define DE_BAUDRATE_115200      "115200"
     #define DE_BAUDRATE_250000      "250000"
+    #define DE_RUNOUT_OFF           "Runout OFF"
+    #define DE_RUNOUT_ON            "Runout ON"
     #define DE_PERCENTAGE           "Prozent"
     #define DE_BABYSTEP             "BabyStep"
     #define DE_PERCENTAGE_SPEED     "Speed"
@@ -89,5 +96,7 @@
     
     #define DE_ONBOARDSD            "OnboardSD"
     #define DE_READ_ONBOARDSD_ERROR "Read Onboard SD card error!"
+    
+    #define DE_FILAMENT_RUNOUT      "filament runout!"
 
 #endif

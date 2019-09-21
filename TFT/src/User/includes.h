@@ -67,6 +67,7 @@
 #include "Extrude.h"
 #include "Fan.h"
 #include "Settings.h"
+#include "leveling.h"
 #include "PowerFailed.h"
 
 #include "Popup.h"
@@ -146,7 +147,7 @@ enum
   
   ICON_FAN_FULL_SPEED,
   ICON_FAN_HALF_SPEED,
-  ICON_POWER_OFF,
+  ICON_ROTATE_UI,
   ICON_LANGUAGE,
   ICON_TOUCHSCREEN_ADJUST,
   ICON_SCREEN_INFO,
@@ -159,6 +160,13 @@ enum
   ICON_BSD_SOURCE,
   ICON_SD_SOURCE,
   ICON_U_DISK,
+  ICON_RUNOUT,
+  
+  ICON_POINT_1,
+  ICON_POINT_2,
+  ICON_POINT_3,
+  ICON_POINT_4,
+  ICON_ABL,
 //  ICON_RESERVE
 };
 
@@ -167,7 +175,7 @@ enum
 typedef struct
 {	
   bool wait;       //Whether wait for Marlin's response
-  bool rx_ok;      //Whether receive Marlin's response
+  bool rx_ok[_USART_CNT]; //Whether receive Marlin's response or get Gcode by other UART(ESP3D/OctoPrint)
   bool connected;  //Whether have connected to Marlin
 #ifdef ONBOARD_SD_SUPPORT     
   bool printing;   //Whether the host is busy in printing execution. ( USB serial printing and GCODE print from onboard)
